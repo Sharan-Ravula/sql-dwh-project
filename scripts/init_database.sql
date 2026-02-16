@@ -22,7 +22,6 @@ where month(create_date) = 2
 ORDER BY create_date desc;
 
 -- Schema Creation
-
 create schema bronze;
 GO
 
@@ -33,7 +32,6 @@ create schema gold;
 go
 
 -- Checking the Table Names
-
 SELECT
     *
 from CUST_AZ12;
@@ -59,11 +57,9 @@ SELECT
 from [cust_info.csv];
 
 -- Replacing the source_CRM folder file name '[filename.csv] to filename' and using name convention (snake_case) for both source_crm and source_erp files
-
 -- Syntax: EXEC sp_rename 'OldTableName', 'NewTableName'
 
 -- CRM
-
 EXEC sp_rename '[prd_info.csv]', 'crm_prd_info';
 go
 
@@ -74,7 +70,6 @@ EXEC sp_rename '[cust_info.csv]', 'crm_cust_info';
 go
 
 -- ERP
-
 EXEC sp_rename 'CUST_AZ12', 'erp_cust_az12';
 go
 
@@ -85,7 +80,6 @@ EXEC sp_rename 'PX_CAT_G1V2', 'erp_px_cat_g1v2';
 go
 
 -- Checking the file names after exec sp_rename
-
 SELECT
     *
 from erp_cust_az12;
@@ -111,17 +105,14 @@ SELECT
 from crm_cust_info;
 
 -- Since the schema used here will be dbo we have to alter
-
 -- Syntax: ALTER SCHEMA [TargetSchema] TRANSFER [SourceSchema].[TableName]
 
 -- CRM
-
 ALTER SCHEMA bronze TRANSFER dbo.crm_prd_info;
 ALTER SCHEMA bronze TRANSFER dbo.crm_sales_details;
 ALTER SCHEMA bronze TRANSFER dbo.crm_cust_info;
 
 -- ERP
-
 ALTER SCHEMA bronze TRANSFER dbo.erp_cust_az12;
 ALTER SCHEMA bronze TRANSFER dbo.erp_loc_a101;
 ALTER SCHEMA bronze TRANSFER dbo.erp_px_cat_g1v2;
@@ -129,26 +120,26 @@ ALTER SCHEMA bronze TRANSFER dbo.erp_px_cat_g1v2;
 -- Additionally, as I am using this in the same database instead of creating a new one (as it maybe expensive using it in cloud)
 -- I can just select the table by adding bronze.filename, simple!
 
-SELECT
+SELECT TOP 100
     *
 from bronze.erp_cust_az12;
 
-SELECT
+SELECT TOP 100
     *
 from bronze.erp_loc_a101;
 
-SELECT
+SELECT TOP 100
     *
 from bronze.erp_px_cat_g1v2;
 
-SELECT
+SELECT TOP 100
     *
 from bronze.crm_prd_info;
 
-SELECT
+SELECT TOP 100
     *
 from bronze.crm_sales_details;
 
-SELECT
+SELECT TOP 100
     *
 from bronze.crm_cust_info;
