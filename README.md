@@ -55,9 +55,9 @@ A huge shout-out to `Data with Baraa`. This project was inspired by and built us
 
 ### 🚀 Setup & Implementation Guide
 
-> `You Write the Code` (On your Mac) -> `VS Code Sends the Command` (Over the Internet)
->                     ^                                        |
->                     |                                        v
+> `You Write the Code` (On your Mac) -> `VS Code Sends the Command` (Over the Internet)  
+>                     ^                                        |  
+>                     |                                        v  
 > `VS Code Displays the Result` (Back on your Mac) <- `Azure SQL Executes the Command` (In the Cloud)
 
 #### 💥 Azure SQL Database & Server Setup
