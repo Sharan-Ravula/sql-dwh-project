@@ -45,7 +45,7 @@ A huge shout-out to `Data with Baraa`. This project was inspired by and built us
 
 - **Medallion Layers**:
 
-<img width="2000" height="1000" alt="image" src="https://github.com/user-attachments/assets/5f8ef44a-e53a-400f-9c8e-976633ca9523" />
+<img width="909" height="752" alt="Screenshot 2026-02-16 at 21 52 19" src="https://github.com/user-attachments/assets/60b9df45-bf98-44bd-aafa-31cf09d64f48" />
 
 - **Bronze**: Raw data ingestion.
 - **Silver**: Cleaned and joined data (using Primary Keys identified in Draw.io).
