@@ -45,7 +45,7 @@ A huge shout-out to `Data with Baraa`. This project was inspired by and built us
 
 - **Medallion Layers**:
 
-<img width="909" height="752" alt="Screenshot 2026-02-16 at 21 52 19" src="https://github.com/user-attachments/assets/60b9df45-bf98-44bd-aafa-31cf09d64f48" />
+[Data_Architecture](docs/data_architecture.pdf)
 
 - **Bronze**: Raw data ingestion.
 - **Silver**: Cleaned and joined data (using Primary Keys identified in Draw.io).
@@ -55,12 +55,7 @@ A huge shout-out to `Data with Baraa`. This project was inspired by and built us
 
 ### 🚀 Setup & Implementation Guide
 
-```text
-`You Write the Code`(On your Mac) -> `VS Code Sends the Command`(Over the Internet)
-                     ^                                        |
-                     |                                        v
-`VS Code Displays the Result`(Back on your Mac) <- `Azure SQL Executes the Command`(In Cloud)
-```
+> `You Write the Code` (On your Mac) -> `VS Code Sends the Command` (Over the Internet) -> `Azure SQL Executes the Command` (In the Cloud) -> `VS Code Displays the Result` (Back on your Mac)
 
 #### 💥 Azure SQL Database & Server Setup
 
@@ -398,22 +393,20 @@ sql-dwh-project/
 ├── datasets/                           # Raw datasets used for the project (ERP and CRM data)
 │
 ├── docs/                               # Project documentation and architecture details
-│   ├── etl.drawio                      # Draw.io file shows all different techniquies and methods of ETL
-│   ├── data_architecture.drawio        # Draw.io file shows the project's architecture
+│   ├── etl.png                      # Draw.io file shows all different techniquies and methods of ETL
+│   ├── data_architecture.drawio        # Draw.io file shows the project's architecture with pdf
 │   ├── data_catalog.md                 # Catalog of datasets, including field descriptions and metadata
-│   ├── data_flow.drawio                 # Draw.io file for the data flow diagram
-│   ├── data_models.drawio              # Draw.io file for data models (star schema)
+│   ├── data_flow.drawio                 # Draw.io file for the data flow diagram with pdf
+│   ├── data_layers.pdf                 # Understanding the Medallion Architecture (Bronze, Silver, Gold)
+│   ├── data_models.drawio              # Draw.io file for data models (star schema) with pdf (left)
 │
 ├── scripts/                            # SQL scripts for ETL and transformations
-│   ├── silver/                         # Scripts for cleaning and transforming data
-│   ├── gold/                           # Scripts for creating analytical models
-│
-├── tests/                              # Test scripts and quality files
+│   ├── silver/                         # Scripts for cleaning, transforming data and quality checks
+│   ├── gold/                           # Scripts for creating analytical models and quality checks
+│   ├── init_database.sql               # to initialize the database, with commands
 │
 ├── README.md                           # Project overview and instructions
-├── LICENSE                             # License information for the repository
-├── .gitignore                          # Files and directories to be ignored by Git
-└── requirements.txt                    # Dependencies and requirements for the project
+└── LICENSE                             # License information for the repository
 ```
 
 ---
@@ -421,6 +414,9 @@ sql-dwh-project/
 ### 📊 Planning Documentation
 
 - **Notion**: Used for tracking the project roadmap, T-SQL syntax notes, and ETL logic.
+
+> Click to open [Notion Document](https://www.notion.so/Data-Warehouse-Project-3073c8d138f080f4bf31ff552297e0c1?source=copy_link)
+
 - **Draw.io**: Used to visualize the Star Schema/Snowflake Schema and determine the specific Join keys (Primary Key/Foreign Key) required for the Silver layer.
 
 ---
