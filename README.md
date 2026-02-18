@@ -13,7 +13,7 @@ The project implements a **Medallion Architecture** (Bronze, Silver, Gold) and f
 A huge shout-out to `Data with Baraa`. This project was inspired by and built using knowledge from his **30-hour SQL Video Course**.
 
 - **Video Link**: [SQL Server Tutorial - Data with Baraa](https://youtu.be/SSKVgrwhzus)
-- **Datasets**: Datasets used in this project were provided by Baraa.
+- **Datasets**: All material and datasets used in this project were provided by Baraa.
 
 ---
 
@@ -54,8 +54,12 @@ A huge shout-out to `Data with Baraa`. This project was inspired by and built us
 ---
 
 ### 🚀 Setup & Implementation Guide
-
-> `You Write the Code` (On your Mac) -> `VS Code Sends the Command` (Over the Internet) -> `Azure SQL Executes the Command` (In the Cloud) -> `VS Code Displays the Result` (Back on your Mac)
+```text
+`You Write the Code` (On your Mac) -> `VS Code Sends the Command` (Over the Internet) 
+                ^                                       |
+                |                                       v
+`VS Code Displays the Result` (Back on your Mac) <- `Azure SQL Executes the Command` (In Cloud)
+```
 
 #### 💥 Azure SQL Database & Server Setup
 
