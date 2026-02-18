@@ -427,7 +427,8 @@ sql-dwh-project/
 │   ├── data_catalog.md                 # Catalog of datasets, including field descriptions and metadata
 │   ├── data_flow.drawio                # Draw.io file for the data flow diagram with pdf
 │   ├── data_layers.pdf                 # Understanding the Medallion Architecture (Bronze, Silver, Gold)
-│   ├── data_models.drawio              # Draw.io file for data models (star schema) with pdf (left)
+│   ├── data_models.drawio              # Draw.io file for data models (star schema) with pdf
+│   ├── data_catalog.md                 # Catalog of datasets, including field descriptions and metadata
 │
 ├── scripts/                            # SQL scripts for ETL and transformations
 │   ├── silver/                         # Scripts for cleaning, transforming data and quality checks
