@@ -13,7 +13,7 @@ The project implements a **Medallion Architecture** (Bronze, Silver, Gold) and f
 A huge shout-out to `Data with Baraa`. This project was inspired by and built using knowledge from his **30-hour SQL Video Course**.
 
 - **Video Link**: [SQL Server Tutorial - Data with Baraa](https://youtu.be/SSKVgrwhzus)
-- **Datasets**: All material and datasets used in this project were provided by Baraa.
+- **Datasets**: Datasets used in this project were provided by Baraa.
 
 ---
 
