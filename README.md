@@ -13,7 +13,7 @@ The project implements a **Medallion Architecture** (Bronze, Silver, Gold) and f
 A huge shout-out to `Data with Baraa`. This project was inspired by and built using knowledge from his **30-hour SQL Video Course**.
 
 - **Video Link**: [SQL Server Tutorial - Data with Baraa](https://youtu.be/SSKVgrwhzus)
-- **Datasets**: All material and datasets used in this project were provided by Baraa.
+- **Datasets**: provided by `Baraa`.
 
 ---
 
@@ -79,8 +79,10 @@ VS Code Displays the Result (Back on your Mac) <- Azure SQL Executes the Command
 
             > (e.g., the one that came with your free account).
         
-        - **Resource group**: Click `Create new` and enter a `simple name`, like SQL-Learning-RG, and click OK.
-        
+        - **Resource group**: Click `Create new` and enter a `simple name`
+            
+            > like SQL-Learning-RG, and click OK.
+
             > A Resource Group is just a folder/container for your Azure resources.
     
     - **Database Details**: Enter a unique name for your `database`
@@ -89,7 +91,9 @@ VS Code Displays the Result (Back on your Mac) <- Azure SQL Executes the Command
 
     - **Create the Server**:
 
-        * For the Server field, click `Create new`. A side panel will open.
+        * For the Server field, click `Create new`
+        
+            > A side panel will open.
 
         * **Server name**: Enter a globally `unique name` 
             
@@ -99,11 +103,15 @@ VS Code Displays the Result (Back on your Mac) <- Azure SQL Executes the Command
         
         * **Authentication method**: Select `Use SQL authentication`
         
-        * **Server admin login**: Choose a `username` 💡 Write this down.
+        * **Server admin login**: Choose a `username` 
+            
+            > 💡 Write this down.
 
-         > e.g., server_admin. 
+            > e.g., server_admin. 
         
-        * **Password**: Create a strong `password` 💡 Write this down.
+        * **Password**: Create a strong `password` 
+        
+            > 💡 Write this down.
         
         * Click OK to create the server.
 
@@ -123,37 +131,45 @@ VS Code Displays the Result (Back on your Mac) <- Azure SQL Executes the Command
 
             * **Click Next**: `Networking`.
 
-            * Under Firewall rules, set `Add current client IP address to Yes`. This adds your Mac's current IP address to the firewall so you can connect from VS Code
+            * Under Firewall rules, Set `Add current client IP address to Yes`. 
+            
+                > This adds your Mac's current IP address to the firewall so you can connect from VS Code
 
             * **Connection Policy**: `Default`
 
             * **Encrypted connections**: `Minimum TLS version`
 
-        - **Review and Create**: Click `Review + create` and then click Create.
+        - **Review and Create**: Click `Review + create` and then click `Create`.
 
         - **Get Final Connection Details**:
 
             > Once the deployment finishes (it may take a few minutes):
 
-            * Click Go to resource.
+            * Click Go to `resource`
 
-            * On the Overview page for your new server, find and copy the `Server name` 💡 Write this down.
-
+            * On the Overview page for your new server, find and copy the `Server name` 
+                
                 > (e.g., sqlserver-name.database.windows.net). 
+
+                > 💡 Write this down.
 
 #### 💥 Connect to the Database from Visual Studio Code
 
 1. Open **`Visual Studio Code`** on your Mac.
 
-2. Open the **`Command Palette`** (Cmd + Shift + P).
+2. Open the **`Command Palette`** 
+
+    > (Cmd + Shift + P).
 
 3. **Type `MS SQL`**: Connect and select it.
 
-4. Choose + **`Create Connection Profile`**.
+4. Choose + **`Create Connection Profile`**
 
 5. Enter the following details you recorded:
 
-    * **Server Name**: Paste the `server name` you copied from the Azure portal.
+    * **Server Name**: Paste the `server name` 
+    
+        > you copied from the Azure portal.
 
     * **Database Name**: Enter the name of your `database` 
         
@@ -162,9 +178,10 @@ VS Code Displays the Result (Back on your Mac) <- Azure SQL Executes the Command
     * **Authentication Type**: Select `SQL Login`
     
     * **User Name**: Enter the Server `admin` login you created 
+        
         > (e.g., azureuser).
     
-    * **Password**: Enter the strong `Password`you created.
+    * **Password**: Enter the strong `Password` you created.
 
 > VS Code will establish the connection. You can now start writing and executing T-SQL queries!
 
@@ -174,11 +191,11 @@ VS Code Displays the Result (Back on your Mac) <- Azure SQL Executes the Command
 
     - **Subscription**: `Free subscription` we get when we create the account
 
-    - **Resource group**: select the already `existing resource group` which is connected to the database and the server
+    - **Resource group**: Select the already `existing resource group` which is connected to the database and the server
 
     - **Storage account name**: `unique name`
 
-    - **Region**: near you `location`
+    - **Region**: Near your `location`
 
     - **Redundancy**: `Azure Locally Redundant Storage` (**LRS**)
 
@@ -194,9 +211,9 @@ VS Code Displays the Result (Back on your Mac) <- Azure SQL Executes the Command
 
 3. **Networking**:
 
-    - **Public Network acess**: `enable`
+    - **Public Network acess**: `Enable`
 
-    - **Public network access scope**: `enable from all networks`
+    - **Public network access scope**: `Enable from all networks`
 
     - **Routing preference**: `Microsoft Network Routing`
 
@@ -208,9 +225,11 @@ VS Code Displays the Result (Back on your Mac) <- Azure SQL Executes the Command
 
     - Once your storage account is ready, `click Containers` in the left menu.
 
-    - Click + Container and name it like project-data.
+    - Click `+ Container` and name it 
+    
+        > like project-data.
 
-    - Upload your CSV files here.
+    - Upload your `CSV files` here.
 
 #### 💥 How to give container access to Azure Server using Managed Identity
 
@@ -220,7 +239,9 @@ VS Code Displays the Result (Back on your Mac) <- Azure SQL Executes the Command
 
     - On the left menu, select `Identity` under Security.
 
-    - Turn Status to `On` for "System assigned" and click Save. This gives your server its own "ID badge"
+    - Turn Status to `On` for "System assigned" and click Save. 
+    
+        > This gives your server its own "ID badge"
 
 2. **Grant Permissions on the Storage Account**:
 
@@ -230,7 +251,7 @@ VS Code Displays the Result (Back on your Mac) <- Azure SQL Executes the Command
 
     - Choose the role: `Storage Blob Data Reader`
 
-    - For "Assign access to," choose `Managed Identity`
+    - For "Assign access to", choose `Managed Identity`
 
     - Select your `SQL Server` from the list and click `Review + assign`
 
@@ -240,7 +261,7 @@ VS Code Displays the Result (Back on your Mac) <- Azure SQL Executes the Command
 
 2. Create one named `df-username-imports`
 
-> keep it in the same Region as your storage.
+    > keep it in the same Region as your storage.
 
 3. Once created, click `Launch Studio`
 
@@ -260,7 +281,9 @@ VS Code Displays the Result (Back on your Mac) <- Azure SQL Executes the Command
 
 - Connect it to your storage account and click `Create`
 
-- **Destination**: Search `Azure SQL Database`. Name it like `AzureSqlDatabase1`
+- **Destination**: Search `Azure SQL Database`. Name it 
+
+    > like `AzureSqlDatabase1`
 
 - Enter your server/DB details and click `Create`
 
@@ -332,7 +355,9 @@ VS Code Displays the Result (Back on your Mac) <- Azure SQL Executes the Command
 
         - set `p_FolderName` to `@pipeline().parameters.UserSelectedFolder`
 
-        - set `p_FileName` to `*.csv` or `*.any-file-extension`
+        - set `p_FileName` to `*.csv` 
+        
+            > or `*.any file extension`
 
     * **Field list**: Click `+ New` -> choose `Child Items`
 
@@ -380,7 +405,7 @@ VS Code Displays the Result (Back on your Mac) <- Azure SQL Executes the Command
 
 1. **`Validate All`**: Click the checkmark at the top. 
     
-    >Should say "No errors found"
+    > Should say "No errors found"
 
 2. **`Publish All`**: Click the blue button at the top to save everything.
 
@@ -397,7 +422,7 @@ sql-dwh-project/
 ├── datasets/                           # Raw datasets used for the project (ERP and CRM data)
 │
 ├── docs/                               # Project documentation and architecture details
-│   ├── etl.png                      # Draw.io file shows all different techniquies and methods of ETL
+│   ├── etl.png                         # Draw.io file shows all different techniquies and methods of ETL
 │   ├── data_architecture.drawio        # Draw.io file shows the project's architecture with pdf
 │   ├── data_catalog.md                 # Catalog of datasets, including field descriptions and metadata
 │   ├── data_flow.drawio                 # Draw.io file for the data flow diagram with pdf
@@ -419,7 +444,7 @@ sql-dwh-project/
 
 - **Notion**: Used for tracking the project roadmap, T-SQL syntax notes, and ETL logic.
 
-> Click to open [Notion Document](https://www.notion.so/Data-Warehouse-Project-3073c8d138f080f4bf31ff552297e0c1?source=copy_link)
+    > Click to open [Notion Document](https://www.notion.so/Data-Warehouse-Project-3073c8d138f080f4bf31ff552297e0c1?source=copy_link)
 
 - **Draw.io**: Used to visualize the Star Schema/Snowflake Schema and determine the specific Join keys (Primary Key/Foreign Key) required for the Silver layer.
 
