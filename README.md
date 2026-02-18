@@ -1,6 +1,6 @@
 # T-SQL Data Warehouse & ETL Automation Project
 
-### 📌 Project Overview
+## 📌 Project Overview
 
 This project is a comprehensive Data Warehousing solution built using **T-SQL** and **Azure Cloud Services**. It was born out of a need to practice enterprise-level SQL development on a macOS environment, where local MS SQL Server Installation (SSMS) is not natively supported.
 
@@ -8,7 +8,7 @@ The project implements a **Medallion Architecture** (Bronze, Silver, Gold) and f
 
 ---
 
-### 🎓 Acknowledgments
+## 🎓 Acknowledgments
 
 A huge shout-out to `Data with Baraa`. This project was inspired by and built using knowledge from his **30-hour SQL Video Course**.
 
@@ -17,7 +17,7 @@ A huge shout-out to `Data with Baraa`. This project was inspired by and built us
 
 ---
 
-### 🛠 Tech Stack
+## 🛠 Tech Stack
 
 - **Database**: `Azure SQL Database` (Serverless)
 
@@ -35,7 +35,7 @@ A huge shout-out to `Data with Baraa`. This project was inspired by and built us
 
 ---
 
-### 🏗 Data Architecture & Strategy
+## 🏗 Data Architecture & Strategy
 
 - **Extraction**: `File Parsing` from Blob Storage.
 
@@ -53,7 +53,7 @@ A huge shout-out to `Data with Baraa`. This project was inspired by and built us
 
 ---
 
-### 🚀 Setup & Implementation Guide
+## 🚀 Setup & Implementation Guide
 ```text
 You Write the Code (On your Mac) -> VS Code Sends the Command (Over the Internet) 
                 ^                                       |
@@ -61,7 +61,7 @@ You Write the Code (On your Mac) -> VS Code Sends the Command (Over the Internet
 VS Code Displays the Result (Back on your Mac) <- Azure SQL Executes the Command (In Cloud)
 ```
 
-#### 💥 Azure SQL Database & Server Setup
+### 💥 Azure SQL Database & Server Setup
 
 1. 🔍 **Navigate to the Creation Page of Azure Portal**:
 
@@ -153,7 +153,7 @@ VS Code Displays the Result (Back on your Mac) <- Azure SQL Executes the Command
 
                 > 💡 Write this down.
 
-#### 💥 Connect to the Database from Visual Studio Code
+### 💥 Connect to the Database from Visual Studio Code
 
 1. Open **`Visual Studio Code`** on your Mac.
 
@@ -185,7 +185,7 @@ VS Code Displays the Result (Back on your Mac) <- Azure SQL Executes the Command
 
 > VS Code will establish the connection. You can now start writing and executing T-SQL queries!
 
-#### 💥 Creating BLOB Storage & Container
+### 💥 Creating BLOB Storage & Container
 
 1. **Basics**:
 
@@ -231,7 +231,7 @@ VS Code Displays the Result (Back on your Mac) <- Azure SQL Executes the Command
 
     - Upload your `CSV files` here.
 
-#### 💥 How to give container access to Azure Server using Managed Identity
+### 💥 How to give container access to Azure Server using Managed Identity
 
 1. **Enable Identity on your SQL Server**:
 
@@ -255,7 +255,7 @@ VS Code Displays the Result (Back on your Mac) <- Azure SQL Executes the Command
 
     - Select your `SQL Server` from the list and click `Review + assign`
 
-#### 💥 Create the Data Factory
+### 💥 Create the Data Factory
 
 1. Search for `Data Factories` in the Azure Portal.
 
@@ -441,7 +441,7 @@ sql-dwh-project/
 
 ---
 
-### 📊 Planning Documentation
+## 📊 Planning Documentation
 
 - **Notion**: Used for tracking the project roadmap, T-SQL syntax notes, and ETL logic.
 
