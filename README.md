@@ -43,6 +43,8 @@ A huge shout-out to `Data with Baraa`. This project was inspired by and built us
 
 - **Load Logic**: `Truncate & Insert` (**SCD Type 1 - Overwrite**).
 
+- **Schema Used in Gold Layer**: `Star Schema`
+
 - **Medallion Layers**:
 
 <img width="830" height="700" alt="Data-architecture" src="https://github.com/user-attachments/assets/063cc44a-e38c-4802-a2bc-6a4ff6666e47" />
