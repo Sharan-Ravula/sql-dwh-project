@@ -13,7 +13,7 @@ The project implements a **Medallion Architecture** (Bronze, Silver, Gold) and f
 A huge shout-out to `Data with Baraa`. This project was inspired by and built using knowledge from his **30-hour SQL Video Course**.
 
 - **Video Link**: [SQL Server Tutorial - Data with Baraa](https://youtu.be/SSKVgrwhzus)
-- **Datasets**: provided by `Baraa`.
+- **Datasets**: provided by `Baraa`
 
 ---
 
@@ -425,7 +425,7 @@ sql-dwh-project/
 │   ├── etl.png                         # Draw.io file shows all different techniquies and methods of ETL
 │   ├── data_architecture.drawio        # Draw.io file shows the project's architecture with pdf
 │   ├── data_catalog.md                 # Catalog of datasets, including field descriptions and metadata
-│   ├── data_flow.drawio                 # Draw.io file for the data flow diagram with pdf
+│   ├── data_flow.drawio                # Draw.io file for the data flow diagram with pdf
 │   ├── data_layers.pdf                 # Understanding the Medallion Architecture (Bronze, Silver, Gold)
 │   ├── data_models.drawio              # Draw.io file for data models (star schema) with pdf (left)
 │
