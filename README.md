@@ -13,6 +13,7 @@ The project implements a **Medallion Architecture** (Bronze, Silver, Gold) and f
 A huge shout-out to `Data with Baraa`. This project was inspired by and built using knowledge from his **30-hour SQL Video Course**.
 
 - **Video Link**: [SQL Server Tutorial - Data with Baraa](https://youtu.be/SSKVgrwhzus)
+  
 - **Datasets**: provided by `Baraa`
 
 ---
@@ -48,7 +49,9 @@ A huge shout-out to `Data with Baraa`. This project was inspired by and built us
 <img width="830" height="700" alt="Data-architecture" src="https://github.com/user-attachments/assets/063cc44a-e38c-4802-a2bc-6a4ff6666e47" />
 
 - **Bronze**: Raw data ingestion.
+  
 - **Silver**: Cleaned and joined data (using Primary Keys identified in Draw.io).
+  
 - **Gold**: Aggregated tables ready for analytics.
 
 ---
