@@ -4,7 +4,7 @@
 
 This project is a comprehensive Data Warehousing solution built using `T-SQL` and `Azure Cloud Services`. It was born out of a need to practice enterprise-level SQL development on a macOS environment, where local MS SQL Server Installation (SSMS) is not natively supported.
 
-The project implements a `Medallion Architecture` (Bronze, Silver, Gold) and features a fully automated `ETL pipeline` using `Azure Data Factory` to ingest CSV datasets into an `Azure SQL Database`.
+The project implements a `Medallion Architecture` (Bronze, Silver, Gold) and features a fully automated `ETL pipeline` using `Azure Data Factory` to ingest CSV datasets into an `Azure SQL Database`
 
 ---
 
