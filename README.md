@@ -2,57 +2,57 @@
 
 ## 📌 Project Overview
 
-This project is a comprehensive Data Warehousing solution built using **T-SQL** and **Azure Cloud Services**. It was born out of a need to practice enterprise-level SQL development on a macOS environment, where local MS SQL Server Installation (SSMS) is not natively supported.
+This project is a comprehensive Data Warehousing solution built using `T-SQL` and `Azure Cloud Services`. It was born out of a need to practice enterprise-level SQL development on a macOS environment, where local MS SQL Server Installation (SSMS) is not natively supported.
 
-The project implements a **Medallion Architecture** (Bronze, Silver, Gold) and features a fully automated ETL pipeline using Azure Data Factory to ingest CSV datasets into an **Azure SQL Database**.
+The project implements a `Medallion Architecture` (Bronze, Silver, Gold) and features a fully automated `ETL pipeline` using `Azure Data Factory` to ingest CSV datasets into an `A`zure SQL Database`.
 
 ---
 
 ## 🎓 Acknowledgments
 
-A huge shout-out to `Data with Baraa`. This project was inspired by and built using knowledge from his **30-hour SQL Video Course**.
+A huge shout-out to `Data with Baraa`. This project was inspired by and built using knowledge from his 30-hour SQL Video Course.
 
-- **Video Link**: [SQL Server Tutorial - Data with Baraa](https://youtu.be/SSKVgrwhzus)
+- Video Link: [SQL Server Tutorial - Data with Baraa](https://youtu.be/SSKVgrwhzus)
   
-- **Datasets**: provided by `Baraa`
+- Datasets: provided by `Baraa`
 
 ---
 
 ## 🛠 Tech Stack
 
-- **Database**: `Azure SQL Database` (Serverless)
+- Database: `Azure SQL Database` (Serverless)
 
-- **Scripting**: `T-SQL` (MS SQL)
+- Scripting: `T-SQL` (MS SQL)
 
-- **IDE**: `Visual Studio Code` (with MSSQL Extension)
+- IDE: `Visual Studio Code` (with MSSQL Extension)
 
-- **Orchestration**: `Azure Data Factory` (ADF)
+- Orchestration: `Azure Data Factory` (ADF)
 
-- **Storage**: `Azure Blob Storage`
+- Storage: `Azure Blob Storage`
 
-- **Planning**: `Notion` (Notes/Tasks) & `Draw.io` (Architecture/ERD)
+- Planning: `Notion` (Notes/Tasks) & `Draw.io` (Architecture/ERD)
 
-- **Naming-Convention**: `snake-case`
+- Naming-Convention: `snake-case`
 
 ---
 
 ## 🏗 Data Architecture & Strategy
 
-- **Extraction**: `File Parsing` from Blob Storage.
+- Extraction: `File Parsing` from Blob Storage.
 
-- **Method**: `Full Load` using Batch Processing.
+- Method: `Full Load` using Batch Processing.
 
-- **Load Logic**: `Truncate & Insert` (**SCD Type 1 - Overwrite**).
+- Load Logic: `Truncate & Insert` (**SCD Type 1 - Overwrite**).
 
-- **Medallion Layers**:
+- Medallion Layers:
 
 <img width="830" height="700" alt="Data-architecture" src="https://github.com/user-attachments/assets/063cc44a-e38c-4802-a2bc-6a4ff6666e47" />
 
-- **Bronze**: Raw data ingestion.
+- Bronze: Raw data ingestion.
   
-- **Silver**: Cleaned and joined data (using Primary Keys identified in Draw.io).
+- Silver: Cleaned and joined data (using Primary Keys identified in Draw.io).
   
-- **Gold**: Aggregated tables ready for analytics.
+- *old: Aggregated tables ready for analytics.
 
 ---
 
@@ -66,59 +66,59 @@ VS Code Displays the Result (Back on your Mac) <- Azure SQL Executes the Command
 
 ### 💥 Azure SQL Database & Server Setup
 
-1. 🔍 **Navigate to the Creation Page of Azure Portal**:
+1. 🔍 Navigate to the Creation Page of Azure Portal:
 
-    - **Select the Service**: In the search menu you opened (the one showing "Azure SQL"), click on the service named `Azure SQL Database`
+    - Select the Service: In the search menu you opened (the one showing "Azure SQL"), click on the service named `Azure SQL Database`
 
-    - **Start Creation**: On the main Azure SQL page, click the `+ Create` button to open the configuration form for a new database.
+    - Start Creation: On the main Azure SQL page, click the `+ Create` button to open the configuration form for a new database.
 
-2. ⚙️ **Configure the Database and Server**:
+2. ⚙️ Configure the Database and Server:
 
     > This is the most critical part where you set up your server and apply the free offer.
 
-    - **Project Details**:
+    - Project Details:
 
-        - **Subscription**: Select your `Azure subscription`
+        - Subscription: Select your `Azure subscription`
 
             > (e.g., the one that came with your free account).
         
-        - **Resource group**: Click `Create new` and enter a `simple name`
+        - Resource group: Click `Create new` and enter a `simple name`
             
             > like SQL-Learning-RG, and click OK.
 
             > A Resource Group is just a folder/container for your Azure resources.
     
-    - **Database Details**: Enter a unique name for your `database`
+    - Database Details: Enter a unique name for your `database`
 
         > e.g., MyLearningDB.
 
-    - **Create the Server**:
+    - Create the Server:
 
         * For the Server field, click `Create new`
         
             > A side panel will open.
 
-        * **Server name**: Enter a globally `unique name` 
+        * Server name: Enter a globally `unique name` 
             
             > e.g., sqlserver-123.
         
-        * **Location**: Select a `region close to you`
+        * Location: Select a `region close to you`
         
-        * **Authentication method**: Select `Use SQL authentication`
+        * Authentication method: Select `Use SQL authentication`
         
-        * **Server admin login**: Choose a `username` 
+        * Server admin login: Choose a `username` 
             
             > 💡 Write this down.
 
             > e.g., server_admin. 
         
-        * **Password**: Create a strong `password` 
+        * Password: Create a strong `password` 
         
             > 💡 Write this down.
         
         * Click OK to create the server.
 
-    - **Apply Free Offer & Networking**:
+    - Apply Free Offer & Networking:
     
         > This ensures your usage stays within the free limits and allows your Mac to connect.
 
@@ -158,73 +158,73 @@ VS Code Displays the Result (Back on your Mac) <- Azure SQL Executes the Command
 
 ### 💥 Connect to the Database from Visual Studio Code
 
-1. Open **`Visual Studio Code`** on your Mac.
+1. Open `Visual Studio Code` on your Mac.
 
-2. Open the **`Command Palette`** 
+2. Open the `Command Palette` 
 
     > (Cmd + Shift + P).
 
-3. **Type `MS SQL`**: Connect and select it.
+3. Type `MS SQL`: Connect and select it.
 
-4. Choose + **`Create Connection Profile`**
+4. Choose + `Create Connection Profile`
 
 5. Enter the following details you recorded:
 
-    * **Server Name**: Paste the `server name` 
+    * Server Name: Paste the `server name` 
     
         > you copied from the Azure portal.
 
-    * **Database Name**: Enter the name of your `database` 
+    * Database Name: Enter the name of your `database` 
         
         >(e.g., MyLearningDB).
     
-    * **Authentication Type**: Select `SQL Login`
+    * Authentication Type: Select `SQL Login`
     
-    * **User Name**: Enter the Server `admin` login you created 
+    * User Name: Enter the Server `admin` login you created 
         
         > (e.g., azureuser).
     
-    * **Password**: Enter the strong `Password` you created.
+    * Password: Enter the strong `Password` you created.
 
 > VS Code will establish the connection. You can now start writing and executing T-SQL queries!
 
 ### 💥 Creating BLOB Storage & Container
 
-1. **Basics**:
+1. Basics:
 
-    - **Subscription**: `Free subscription` we get when we create the account
+    - Subscription: `Free subscription` we get when we create the account
 
-    - **Resource group**: Select the already `existing resource group` which is connected to the database and the server
+    - Resource group: Select the already `existing resource group` which is connected to the database and the server
 
-    - **Storage account name**: `unique name`
+    - Storage account name: `unique name`
 
-    - **Region**: Near your `location`
+    - Region: Near your `location`
 
-    - **Redundancy**: `Azure Locally Redundant Storage` (**LRS**)
+    - Redundancy: `Azure Locally Redundant Storage` (**LRS**)
 
-2. **Advanced**:
+2. Advanced:
 
-    - **Require secure transfer for rest api operations**: `checked`
+    - Require secure transfer for rest api operations: `checked`
 
-    - **Enable storage account key access**: `checked`
+    - Enable storage account key access: `checked`
 
-    - **Minimum TLS version**: `Version 1.2`
+    - Minimum TLS version: `Version 1.2`
 
-    - **Access Tier**: `Hot`
+    - Access Tier: `Hot`
 
-3. **Networking**:
+3. Networking:
 
-    - **Public Network acess**: `Enable`
+    - Public Network acess: `Enable`
 
-    - **Public network access scope**: `Enable from all networks`
+    - Public network access scope: `Enable from all networks`
 
-    - **Routing preference**: `Microsoft Network Routing`
+    - Routing preference: `Microsoft Network Routing`
 
-4. **Encryption Type**: `MMK`
+4. Encryption Type: `MMK`
 
 > Once the blob storage is deployed
 
-5. **Create a Container**:
+5. Create a Container:
 
     - Once your storage account is ready, `click Containers` in the left menu.
 
@@ -236,7 +236,7 @@ VS Code Displays the Result (Back on your Mac) <- Azure SQL Executes the Command
 
 ### 💥 How to give container access to Azure Server using Managed Identity
 
-1. **Enable Identity on your SQL Server**:
+1. Enable Identity on your SQL Server:
 
     - Go to your `SQL Server` in the Azure Portal.
 
@@ -246,7 +246,7 @@ VS Code Displays the Result (Back on your Mac) <- Azure SQL Executes the Command
     
         > This gives your server its own "ID badge"
 
-2. **Grant Permissions on the Storage Account**:
+2. Grant Permissions on the Storage Account:
 
     - Go to your `Storage Account` (storageproject).
 
@@ -270,7 +270,7 @@ VS Code Displays the Result (Back on your Mac) <- Azure SQL Executes the Command
 
 ### 💥 ETL Automation: Converting CSV to SQL Table Data
 
-🛠️ **Phase 1: The Connections (`Linked Services`)**:
+🛠️ Phase 1: The Connections (`Linked Services`):
 
 > Before you can build anything, the "cables" must be plugged in.
 
@@ -280,21 +280,21 @@ VS Code Displays the Result (Back on your Mac) <- Azure SQL Executes the Command
 
 - Select `Linked services` -> `+ New`
 
-- **Source**: Search `Azure Blob Storage`. Name it like `AzureBlobStorage1`
+- Source: Search `Azure Blob Storage`. Name it like `AzureBlobStorage1`
 
 - Connect it to your storage account and click `Create`
 
-- **Destination**: Search `Azure SQL Database`. Name it 
+- Destination: Search `Azure SQL Database`. Name it 
 
     > like `AzureSqlDatabase1`
 
 - Enter your server/DB details and click `Create`
 
-🛠️ **Phase 2: The Templates (`Datasets`)**:
+🛠️ Phase 2: The Templates (`Datasets`):
 
 > We create the "pockets" (parameters) now so they are ready for the pipeline later.
 
-1. **Part A: The Source (`ds_SourceCSV`)**:
+1. Part A: The Source (`ds_SourceCSV`):
 
     - Go to the `Author` (Pencil) tab. Click + -> `Dataset` -> `Azure Blob Storage` -> `DelimitedText`
 
@@ -302,37 +302,37 @@ VS Code Displays the Result (Back on your Mac) <- Azure SQL Executes the Command
 
         > You can name it anything you like
     
-    - **Linked Service**: `AzureBlobStorage1`
+    - Linked Service: `AzureBlobStorage1`
 
-    - **Important**: Pick your container (e.g., data), but leave `Directory` and `File` empty. 
+    - Important: Pick your container (e.g., data), but leave `Directory` and `File` empty. 
 
     - Check `First row as header`. Click OK.
 
-    - **Parameters Tab**: Click `+ New` twice. Create:
+    - Parameters Tab: Click `+ New` twice. Create:
 
         * `p_FolderName`
 
         * `p_FileName`
 
-    - **Connection Tab**: 
+    - Connection Tab: 
 
         * In the `Directory box`, click `"Add dynamic content"` -> select `@dataset().p_FolderName`
 
         * In the `File box`, click `"Add dynamic content"` -> select `@dataset().p_FileName`
 
-2. **Part B: The Sink (`ds_SQL_Sink`)**:
+2. Part B: The Sink (`ds_SQL_Sink`):
 
     - Click `+` -> `Dataset` -> `Azure SQL Database`
 
-    - **Name**: `ds_SQL_Sink`
+    - Name: `ds_SQL_Sink`
 
         > You can name it anything you like
 
-    - **Linked Service**: `AzureSqlDatabase1`
+    - Linked Service: `AzureSqlDatabase1`
 
-    - **Parameters Tab**: Click `+ New`, Create `p_TableName` and `p_SchemaName`
+    - Parameters Tab: Click `+ New`, Create `p_TableName` and `p_SchemaName`
 
-    - **Connection Tab**: 
+    - Connection Tab: 
 
         * In the `Table section`, check the `Edit box` (to enter manually).
 
@@ -340,21 +340,21 @@ VS Code Displays the Result (Back on your Mac) <- Azure SQL Executes the Command
 
         * Click the box -> `"Add dynamic content"` -> select `@dataset().p_SchemaName`
 
-🛠️ **Phase 3: The Pipeline Logic**:
+🛠️ Phase 3: The Pipeline Logic:
 
 > Now we build the "brain" to use these templates.
 
 1. Click `+` -> `Pipeline` -> Name it like `pl_BulkCSVImport`
 
-2. **Create Parameter**: Click the empty canvas background -> `Parameters tab` -> `+ New`. Name it `UserSelectedFolder`
+2. Create Parameter: Click the empty canvas background -> `Parameters tab` -> `+ New`. Name it `UserSelectedFolder`
 
-3. **The Scout (`Get Metadata`)**:
+3. The Scout (`Get Metadata`):
 
     * Drag `Get Metadata` onto the canvas.
 
-    * **Settings Tab**: Select `ds_SourceCSV`
+    * Settings Tab: Select `ds_SourceCSV`
 
-    * **In Dataset properties**:
+    * In Dataset properties:
 
         - set `p_FolderName` to `@pipeline().parameters.UserSelectedFolder`
 
@@ -362,15 +362,15 @@ VS Code Displays the Result (Back on your Mac) <- Azure SQL Executes the Command
         
             > or `*.any file extension`
 
-    * **Field list**: Click `+ New` -> choose `Child Items`
+    * Field list: Click `+ New` -> choose `Child Items`
 
-4. **The Loop (`ForEach`)**:
+4. The Loop (`ForEach`):
 
     * Drag `ForEach` onto the canvas. `Connect the green arrow from Get Metadata to it`
 
-    * **Settings Tab**: Set `Items` to `@activity('Get Metadata1').output.childItems`
+    * Settings Tab: Set `Items` to `@activity('Get Metadata1').output.childItems`
 
-🛠️ **Phase 4: The Engine (`Inside the Loop`)**:
+🛠️ Phase 4: The Engine (`Inside the Loop`):
 
 > This is where the actual copying happens.
 
@@ -378,41 +378,41 @@ VS Code Displays the Result (Back on your Mac) <- Azure SQL Executes the Command
 
 2. Drag a `Copy Data` activity onto the blank canvas.
 
-3. **Source Tab**:
+3. Source Tab:
 
     * Select `ds_SourceCSV`
 
-    * **`p_FolderName`**: `@pipeline().parameters.UserSelectedFolder`
+    * `p_FolderName`: `@pipeline().parameters.UserSelectedFolder`
 
-    * **`p_FileName`**: `@item().name`
+    * `p_FileName`: `@item().name`
 
-4. **Sink Tab**:
+4. Sink Tab:
 
     * Select `ds_SQL_Sink`
 
-    * **p_TableName**: `@replace(item().name, '.csv', '')`
+    * p_TableName: `@replace(item().name, '.csv', '')`
 
-    * **p_SchemaName**: `(type your unique schema name)`
+    * p_SchemaName: `(type your unique schema name)`
 
-    * **Table option**: Select `Auto create table`
+    * Table option: Select `Auto create table`
 
     * Look for the box labeled `Pre-copy script`
 
-    * **Enter this exact logic**: `TRUNCATE TABLE schemaname.@{replace(item().name, '.csv', '')}` 
+    * Enter this exact logic: `TRUNCATE TABLE schemaname.@{replace(item().name, '.csv', '')}` 
         
-        > **`IMPORTANT`**: Do not use this code if you are publishing for the first time, only use it when you debug and get every single file successful.
+        > `IMPORTANT`: Do not use this code if you are publishing for the first time, only use it when you debug and get every single file successful.
         
-        > **`Note`**: This command tells SQL: "Right before you put the new data in, empty out the existing table named `[YourTable]`." This ensures you never have duplicate data if you have to run a debug multiple times.
+        > `Note`: This command tells SQL: "Right before you put the new data in, empty out the existing table named `[YourTable]`." This ensures you never have duplicate data if you have to run a debug multiple times.
 
-🏁 **Phase 5: Launch**:
+🏁 Phase 5: Launch:
 
-1. **`Validate All`**: Click the checkmark at the top. 
+1. `Validate All`: Click the checkmark at the top. 
     
     > Should say "No errors found"
 
-2. **`Publish All`**: Click the blue button at the top to save everything.
+2. `Publish All`: Click the blue button at the top to save everything.
 
-3. **`Debug`**: Enter your folder name 
+3. `Debug`: Enter your folder name 
 
     > (e.g., source_crm) and watch the magic happen.
 
@@ -446,11 +446,11 @@ sql-dwh-project/
 
 ## 📊 Planning Documentation
 
-- **Notion**: Used for tracking the project roadmap, T-SQL syntax notes, and ETL logic.
+- Notion: Used for tracking the project roadmap, T-SQL syntax notes, and ETL logic.
 
     > Click to open [Notion Document](https://www.notion.so/Data-Warehouse-Project-3073c8d138f080f4bf31ff552297e0c1?source=copy_link)
 
-- **Draw.io**: Used to visualize the Star Schema/Snowflake Schema and determine the specific Join keys (Primary Key/Foreign Key) required for the Silver layer.
+- Draw.io: Used to visualize the Star Schema/Snowflake Schema and determine the specific Join keys (Primary Key/Foreign Key) required for the Silver layer.
 
 ---
 
