@@ -1,10 +1,10 @@
-# T-SQL Data Warehouse & ETL Automation Project
+# T-SQL Data Warehouse & Analytics Ecosystem
 
 ## 📌 Project Overview
 
-This project is a comprehensive Data Warehousing solution built using `T-SQL` and `Azure Cloud Services`. It was born out of a need to practice enterprise-level SQL development on a macOS environment, where local MS SQL Server Installation (SSMS) is not natively supported.
+This project is a comprehensive Data Warehousing and Analytics solution built using `T-SQL` and `Azure Cloud Services`. Originally designed to implement enterprise-level SQL development on macOS, the project evolved from a standard `ETL` pipeline into a full-scale analytical platform.
 
-The project implements a `Medallion Architecture` (Bronze, Silver, Gold) and features a fully automated `ETL pipeline` using `Azure Data Factory` to ingest CSV datasets into an `Azure SQL Database`
+The architecture follows the `Medallion` Design Pattern (Bronze, Silver, Gold) and features an automated ETL pipeline using `Azure Data Factory` to ingest raw CSV data into an `Azure SQL Database`. Beyond the infrastructure, the project includes deep-dive exploratory analysis and business-ready reporting layers.
 
 ---
 
@@ -18,6 +18,49 @@ A huge shout-out to `Data with Baraa`. This project was inspired by and built us
 
 ---
 
+## 🚀 Key Features
+
+1. Data Architecture & ETL
+
+  - Medallion Architecture: Data flows from raw ingestion (Bronze), through cleaning and standardization (Silver), to business-ready dimensional modeling (Gold).
+
+  - Automation: Orchestrated via Azure Data Factory for seamless data movement.
+
+2. Exploratory Data Analysis (EDA)
+
+  - Comprehensive scripts designed to audit the health and scope of the data, including:
+  
+  - Database Schema Exploration: Mapping metadata and column structures.
+  
+  - Dimensional Profiling: Identifying unique attributes across customers, products, and geographies.
+  
+  - Date Boundary Analysis: Determining the operational lifespan of the business and customer demographics.
+  
+  - Measure Exploration: Calculating "Big Number" KPIs like Total Sales, Quantity, and Unique Order counts.
+
+3. Advanced Data Analytics (ADA)
+
+  - Complex SQL logic used to extract actionable business insights:
+  
+  - Time-Series Analysis: Tracking sales performance and customer acquisition trends over months and years.
+  
+  - Cumulative Metrics: Implementation of window functions for Running Totals and Moving Averages.
+  
+  - Performance Benchmarking: Comparing current product performance against historical averages and Year-over-Year (YoY) growth.
+  
+  - Part-to-Whole Analysis: Calculating category contributions to total revenue.
+  
+  - Behavioral Segmentation: Logic to classify customers (VIP, Regular, New) based on spending and lifespan.
+
+4. Business Intelligence Layer (Reporting Views)
+   
+  - The Gold layer is capped with modular SQL Views that serve as a "Single Source of Truth" for BI tools:
+  
+  - report_products: Consolidates product metrics, lifecycle data, and performance segments (High/Mid/Low performers).
+  
+  - report_customers: Aggregates customer behavior, including age-grouping, recency, and Average Order Value (AOV).
+
+---
 ## 🛠 Tech Stack
 
 - Database: `Azure SQL Database` (Serverless)
@@ -436,6 +479,8 @@ sql-dwh-project/
 ├── scripts/                            # SQL scripts for ETL and transformations
 │   ├── silver/                         # Scripts for cleaning, transforming data and quality checks
 │   ├── gold/                           # Scripts for creating analytical models and quality checks
+│   ├── eda/                            # Contains scripts for initial data profiling, verifying database schema, and identifying key business measures and date boundaries.
+│   ├── ada/                            # Contains scripts for advanced logic such as time-series trends, year-over-year performance, and complex customer segmentation.
 │   ├── init_database.sql               # to initialize the database, with commands
 │
 ├── README.md                           # Project overview and instructions
